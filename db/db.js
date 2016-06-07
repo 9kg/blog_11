@@ -19,7 +19,7 @@ var insert = (name, content, ip, fn) => {
         ip: ip,
         datetime: new Date,
         content: content,
-        reply: null
+        pid: null
     };
     var connection = mysql.createConnection('mysql://bramble:xuguoyi11@bao.bramble.wang/blog_xuguoyi');
     connection.connect();
