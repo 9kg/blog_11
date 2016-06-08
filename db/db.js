@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 var query = fn => {
-    var connection = mysql.createConnection('mysql://bramble:xuguoyi11@bao.bramble.wang/blog_xuguoyi');
+    var connection = mysql.createConnection('mysql://bramble:xuguoyi11@bramble.wang/blog_xuguoyi?charset=utf8mb4');
     connection.connect();
 
     connection.query('select * from message', function(err, rows, fields) {
@@ -21,7 +21,7 @@ var insert = (name, content, ip, fn) => {
         content: content,
         pid: null
     };
-    var connection = mysql.createConnection('mysql://bramble:xuguoyi11@bao.bramble.wang/blog_xuguoyi');
+    var connection = mysql.createConnection('mysql://bramble:xuguoyi11@bramble.wang/blog_xuguoyi?charset=utf8mb4');
     connection.connect();
 
     var query = connection.query('insert into message set ?', obj, function(err, result) {
